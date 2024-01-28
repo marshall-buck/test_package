@@ -8,7 +8,7 @@ environment:
 
 flutter:
   assets:
-    - lib/data/
+    - lib/data/test.json
 
 # Add regular dependencies here.
 dependencies:
