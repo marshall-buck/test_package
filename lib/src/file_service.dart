@@ -65,8 +65,8 @@ class FileService {
 
     // Use the resolved file path to access the file
     final file = File(p.join(resolvedUri.toFilePath()));
-
-    if (!file.existsSync()) {
+    bool exists = await file.exists();
+    if (!exists) {
       throw FileSystemException('File not found', resolvedUri.toString());
     }
 
