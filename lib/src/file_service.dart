@@ -55,7 +55,7 @@ class FileService {
   /// The [fileName] parameter specifies the name of the file to load.
   Future<String> loadData({required String fileName}) async {
     // Construct the package URI
-    final uri = Uri.parse('package:test_package/data/$fileName');
+    final uri = Uri.parse('package:test_package/lib/data/$fileName');
 
     // Resolve the package URI to a file path asynchronously
     final resolvedUri = await Isolate.resolvePackageUri(uri);
