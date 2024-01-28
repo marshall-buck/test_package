@@ -22,7 +22,7 @@ class FileService {
   /// Returns the contents as a [String].
   Future<String> loadData({required String fileName}) async {
     // Use the correct asset path format for package assets
-    final String assetPath = 'packages/test_package/data/$fileName';
+    final String assetPath = 'packages/test_package/lib/data/$fileName';
     final String contents;
     try {
       contents = await rootBundle.loadString(assetPath);
