@@ -6,9 +6,9 @@ version: 1.0.0
 environment:
   sdk: ^3.2.5
 
-flutter:
-  assets:
-    - lib/data/
+# flutter:
+#   assets:
+#     - lib/data/
 
 # Add regular dependencies here.
 dependencies:

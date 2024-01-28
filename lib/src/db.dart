@@ -8,7 +8,7 @@ class DB {
   get fakeDataData => _fakeDataData;
 
   Future<void> init() async {
-    print('From DB.init: ${fileService.pathToFiles}');
+    // print('From DB.init: ${fileService.packageUri}');
     final FakeData fakeData = FakeData();
     await fakeData.init(fileService);
     _fakeDataData = fakeData.data;
