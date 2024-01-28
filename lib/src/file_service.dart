@@ -15,7 +15,7 @@
 //   }
 // }
 import 'dart:io';
-import 'dart:async';
+
 import 'dart:isolate';
 import 'package:path/path.dart' as p;
 
@@ -44,3 +44,33 @@ class FileService {
     return file.readAsString();
   }
 }
+
+
+// import 'dart:isolate';
+// import 'dart:async';
+// import 'dart:io';
+// import 'package:path/path.dart' as p;
+
+// class FileService {
+//   /// Loads data from a file within the package.
+//   /// The [fileName] parameter specifies the name of the file to load.
+//   Future<String> loadData({required String fileName}) async {
+//     // Construct the package URI
+//     final uri = Uri.parse('package:your_package_name/data/$fileName');
+
+//     // Resolve the package URI to a file path asynchronously
+//     final resolvedUri = await Isolate.resolvePackageUri(uri);
+//     if (resolvedUri == null) {
+//       throw FileSystemException('Unable to resolve package URI for $fileName');
+//     }
+
+//     // Use the resolved file path to access the file
+//     final file = File(p.join(resolvedUri.toFilePath()));
+
+//     if (!file.existsSync()) {
+//       throw FileSystemException('File not found', resolvedUri.toString());
+//     }
+
+//     return await file.readAsString();
+//   }
+// }
