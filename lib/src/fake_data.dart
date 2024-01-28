@@ -6,7 +6,11 @@ class FakeData {
   Map? data;
 
   Future<void> init(FileService fileService) async {
-    final String contents = await fileService.loadData(fileName: 'test.json');
-    data = jsonDecode(contents);
+    try {
+      final String contents = await fileService.loadData(fileName: 'test.json');
+      data = jsonDecode(contents);
+    } catch (e) {
+      print('Error loading data FakeData.init(): $e');
+    }
   }
 }
