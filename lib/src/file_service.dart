@@ -21,10 +21,16 @@ class FileService {
   /// Opens a file from [fileName] located in the package's assets.
   /// Returns the contents as a [String].
   Future<String> loadData({required String fileName}) async {
-    // Reference assets using the 'packages/packageName' scheme
-    // final String assetPath = 'assets/data/$fileName';
+    // Use the correct asset path format for package assets
     final String assetPath = 'packages/test_package/data/$fileName';
-    final String contents = await rootBundle.loadString(assetPath);
+    final String contents;
+    try {
+      contents = await rootBundle.loadString(assetPath);
+    } catch (e) {
+      // If there's an error loading the asset, print the error and the attempted path
+      print('Error loading asset at $assetPath: $e');
+      rethrow; // Rethrow the exception to maintain the error state
+    }
 
     return contents;
   }
