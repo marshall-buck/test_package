@@ -1,5 +1,4 @@
-import 'package:test_package/src/fake_data.dart';
-
+import 'fake_data.dart';
 import 'file_service.dart';
 
 class DB {
