@@ -1,8 +1,9 @@
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
+
 import 'package:test_package/src/file_service.dart';
-import 'dart:io';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   group('FileService', () {
     final fileService = FileService();
 
@@ -18,8 +19,8 @@ void main() {
       final String fileName = 'non_existent_file.txt';
 
       expect(
-        fileService.loadData(fileName: fileName),
-        throwsA(isA<FileSystemException>()),
+        () async => await fileService.loadData(fileName: fileName),
+        throwsA(isA<Error>()),
       );
     });
   });
