@@ -6,4 +6,4 @@ library;
 export 'src/db.dart';
 
 /// Export any libraries intended for clients of this package.
-export 'package:path/path.dart';
+// export 'package:path/path.dart';
